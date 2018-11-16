@@ -1,0 +1,13 @@
+private static int Solution(int A, int B) {
+		int max = 0;
+		for (int i = B; i >= A; i--) {
+			double d = Math.sqrt(i);
+			int count = 0;
+			while ((d-(int)d)==0 && d > 0) {
+				count++;
+				d = Math.sqrt(d);
+			}
+			max = Math.max(max, count);
+		}
+		return max;
+	}
