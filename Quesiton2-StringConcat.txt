@@ -1,0 +1,27 @@
+private static String solution(int A, int B) {
+		StringBuilder retVal = new StringBuilder("");
+		if(A>B) {
+			while(A-- > 0) {
+				retVal.append("a");
+			}
+			System.out.println("***"+retVal.toString());
+			return fillPostion("b",B,retVal);
+		}else {
+			while(B-- > 0) {
+				retVal.append("b");
+			}
+			return fillPostion("a",A,retVal);
+		}
+	}
+
+	private static String fillPostion(String string, int fillCount, StringBuilder returnVal) {
+		int index = 2;
+		while (fillCount-- > 0) {
+			returnVal.insert(index, string);
+			index += 3;
+			if (index > returnVal.toString().length()) {
+				index = 1;
+			}
+		}
+		return returnVal.toString();
+	}
